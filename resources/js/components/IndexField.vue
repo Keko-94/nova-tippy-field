@@ -4,6 +4,7 @@
             :text="field.text"
             :iconPath="field.iconPath"
             :iconUrl="field.iconUrl"
+            :iconSize="field.iconSize"
             :tipContent="field.tipContent"
             :id="field.id"
             :placement="field.placement"
@@ -18,5 +19,6 @@ import Tippy from './Tippy';
 export default {
     components : { Tippy },
     props: ['resourceName', 'field'],
+
 }
 </script>
