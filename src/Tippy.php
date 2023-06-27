@@ -20,26 +20,17 @@ class Tippy extends Field
      */
     public $shouldShow = false;
 
-
     public $iconPosition = 'left';
 
     public $placement = 'top';
 
     public $iconSize = '20px';
 
-    /**
-     * Indicates if the field value should be displayed as HTML.
-     *
-     * @var bool
-     */
-    public $asHtml = false;
-
     public function __construct($name, $attribute = null, callable $resolveCallback = null)
     {
         parent::__construct($name, $attribute, $resolveCallback);
 
         $this->textAlign('center');
-
     }
 
     /**
@@ -50,18 +41,6 @@ class Tippy extends Field
     public function shouldShow()
     {
         $this->shouldShow = true;
-
-        return $this;
-    }
-
-    /**
-     * Display the field as raw HTML using Vue.
-     *
-     * @return $this
-     */
-    public function asHtml()
-    {
-        $this->asHtml = true;
 
         return $this;
     }
@@ -153,17 +132,5 @@ class Tippy extends Field
     public function tippyOptions($tippyOptions)
     {
         return $this->withMeta(['tippyOptions' => $tippyOptions]);
-    }
-
-    /**
-     * Prepare the element for JSON serialization.
-     *
-     * @return array<string, mixed>
-     */
-    public function jsonSerialize(): array
-    {
-        return array_merge(parent::jsonSerialize(), [
-            'asHtml' => $this->asHtml
-        ]);
     }
 }
