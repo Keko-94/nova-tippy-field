@@ -1,5 +1,7 @@
-Nova.booting((Vue, router, store) => {
-    Vue.component('index-nova-tippy-field', require('./components/IndexField'))
-    Vue.component('detail-nova-tippy-field', require('./components/DetailField'))
-    //   Vue.component('form-nova-tippy-field', require('./components/FormField'))
+import IndexField from './components/IndexField'
+import DetailField from './components/DetailField'
+
+Nova.booting((app, store) => {
+    app.component('index-nova-tippy-field', IndexField)
+    app.component('detail-nova-tippy-field', DetailField)
 })
