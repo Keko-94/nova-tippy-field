@@ -1,6 +1,6 @@
 <template>
-  <panel-item :field="field">
-    <template slot="value">
+  <panel-item :index="index" :field="field">
+    <template #value>
       <excerpt
         :content="field.tipContent"
         :plain-text="true"
@@ -12,6 +12,6 @@
 
 <script>
 export default {
-  props: ['resource', 'resourceName', 'resourceId', 'field'],
+  props: ['index', 'resource', 'resourceName', 'resourceId', 'field'],
 }
 </script>
